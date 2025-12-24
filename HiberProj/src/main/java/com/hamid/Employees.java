@@ -1,17 +1,22 @@
 package com.hamid;
 
+
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "emp_data")
+//@Table(name = "emp_data")
 public class Employees {
     @Id
     private int eId;
     @Column(name = "eName")
     private String name;
     private String tech;
-    @OneToOne
-    private Laptop laptop;
+//    @OneToOne
+    @OneToMany //(mappedBy = "employee")
+//    @ManyToMany
+    private List<Laptop> laptops;
 
     public int geteId() {
         return eId;
@@ -37,12 +42,12 @@ public class Employees {
         this.tech = tech;
     }
 
-    public Laptop getLaptop() {
-        return laptop;
+    public List<Laptop> getLaptops() {
+        return laptops;
     }
 
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
     }
 
     @Override
@@ -51,7 +56,7 @@ public class Employees {
                 "eId=" + eId +
                 ", name='" + name + '\'' +
                 ", tech='" + tech + '\'' +
-                ", laptop=" + laptop + '\'' +
+                ", laptop=" + laptops + '\'' +
                 '}';
     }
 }

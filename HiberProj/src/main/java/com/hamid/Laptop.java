@@ -1,8 +1,10 @@
 package com.hamid;
 
-import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import java.util.List;
 
 @Entity
 public class Laptop {
@@ -11,6 +13,18 @@ public class Laptop {
     private String brand;
     private String model;
     private int ram;
+
+//    @ManyToOne
+//    @ManyToMany(mappedBy = "laptops")
+//    private List<Employees> employees;
+//
+//    public List<Employees> getEmployees() {
+//        return employees;
+//    }
+//
+//    public void setEmployees(List<Employees> employees) {
+//        this.employees = employees;
+//    }
 
     public String getBrand() {
         return brand;
