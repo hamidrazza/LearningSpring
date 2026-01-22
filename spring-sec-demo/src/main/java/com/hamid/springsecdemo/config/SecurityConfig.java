@@ -24,6 +24,7 @@ public class SecurityConfig {
     @Autowired
     private MyUserDetailsService userDetailsService;
 
+    //Authentication Provider
     @Bean
     public AuthenticationProvider authProvider(){
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider(userDetailsService);
@@ -33,6 +34,7 @@ public class SecurityConfig {
         return provider;
     }
 
+    //Security FilterChain
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http){
 

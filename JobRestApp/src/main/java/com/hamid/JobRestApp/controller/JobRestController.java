@@ -1,6 +1,7 @@
-package com.hamid.JobRestApp;
+package com.hamid.JobRestApp.controller;
 
 import com.hamid.JobRestApp.model.JobPost;
+import com.hamid.JobRestApp.model.User;
 import com.hamid.JobRestApp.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
