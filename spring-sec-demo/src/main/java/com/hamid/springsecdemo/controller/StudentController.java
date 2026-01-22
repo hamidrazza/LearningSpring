@@ -1,5 +1,6 @@
-package com.hamid.springsecdemo;
+package com.hamid.springsecdemo.controller;
 
+import com.hamid.springsecdemo.model.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
