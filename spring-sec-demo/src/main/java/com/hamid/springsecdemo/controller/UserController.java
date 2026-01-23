@@ -17,13 +17,13 @@ public class UserController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    @PostMapping("/register")
-    public User userRegister(@RequestBody User user){
+    @PostMapping("register")
+    public User register(@RequestBody User user){
         service.registerUser(user);
         return user;
     }
 
-    @PostMapping("/login")
+    @PostMapping("login")
     public String login(@RequestBody User user){
         Authentication authentication = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
